@@ -1,0 +1,29 @@
+{
+  "name": "friendFinder",
+  "version": "1.0.0",
+  "description": "An application to find friends for a user based on their input using Node.Js and Express.Js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wabernathy96/friendFinder.git"
+  },
+  "keywords": [],
+  "author": "wabernathy96",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wabernathy96/friendFinder/issues"
+  },
+  "homepage": "https://github.com/wabernathy96/friendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect": "^3.6.6",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
