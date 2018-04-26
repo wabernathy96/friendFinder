@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 
 // Join app routes
-// require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-// require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
+require(path.join(__dirname, './app/routing/apiRoutes'))(app);
+require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
 
 // Start server listening on PORT 3000
 app.listen(PORT, () => {
