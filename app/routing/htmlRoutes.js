@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = (app) => {
+
+    console.log('HTML routes online');
     
     // Get home html file for default page
     app.get ('/', (req,res) => {
