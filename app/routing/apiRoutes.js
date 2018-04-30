@@ -13,6 +13,7 @@ module.exports = (app) => {
     });
 
     app.post ('/api/friends', (req,res) => {
-        
+        var userInput = req.body;
+		console.log('userInput = ' + JSON.stringify(userInput));
     });
 };
