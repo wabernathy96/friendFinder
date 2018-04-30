@@ -12,13 +12,166 @@
 </head>
 <body>
     <div class="container">
-        <a href="home.html">
-            <h1 class="deep-purple-text center">
-                <i class="material-icons md-48">face</i>
-                Friend Finder
-            </h1>
-        </a>
-    </div>
+        <header>
+            <a href="home.html">
+                <h1 class="deep-purple-text center main-title">
+                    <i class="material-icons" style="font-size: 48px">face</i>
+                    Friend Finder
+                </h1>
+            </a>
+        </header>
+    
+        <main>
+            <div class="row">
+                <div class="col m12 center-align">
+                    <form action="../data/friends.js" name="surveyForm">
+                        <strong><h5 class="center">
+                            Your friend calls you up and wants to go on a small road trip over the weekend. You check your schedule and agree to go. However, a potential love interest calls you and asks if you want to 'chill' on Saturday the week before the trip.
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to bail on the friend in favor of the love interst? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que1" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            You go to a party and get handed the aux cord. You play a few songs and your friend walks up to ask if he can play a couple of fire tracks.  
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to let your friend play some bangers? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que2" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            A friend has an issue with his vehicle and is not going to be able to get to work in the morning.  
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to offer your friend a ride? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que3" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            You're playing Fortnite and you drink two small shield potions. You have one more potion, and your friend has no shields. 
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to give the potion to your friend? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que4" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            Your friend is doing some scumbag stuff that does not seem true to who they are. The activities they are participating in are both dangerous and illicit.
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to try and talk some sense into your friend? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que5" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            You're at a craft brewery with a buddy of yours. Y'all each get different beers, but both beers sound good. Your friend asks if he can try a sip of yours.  
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to let your friend try a sip of beer? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que6" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                           A friend says they like a scumbag music artist. For example, the mumble rap artist XXXtentacion. You know that the music they like and the artist who makes it are both trash.
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to tell your friend that they shouldn't listen to the artist? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que7" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            Your friend is beyond the point of inebriation and has become totally black-out drunk. They are making a fool of themself, and could be in danger of alcohol poisoning.
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to encourage your friend to continue drinking? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que9" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely, and I would snapchat them when they pass out
+                        </strong></p>
+
+                        <strong><h5 class="center">
+                            Your friend of the same sex tells you that they love you. You are both of a straight sexual orientation.
+                        </strong></h5>
+                        <strong><h6 class="center">
+                            How likely are you to tell your friend to cut that gay stuff out? 
+                        </strong></h6> 
+
+                        <p class="range-field">
+                            <input name="que9" type="range" id="test5" oninput="showVal(this.value)" onchange="showVal(this.value)" min="1" max="5" />
+                        </p>
+                            
+                        <strong><p class="center">
+                            1 = Not likely || 5 = Very Likely
+                        </strong></p>
+                
+                        <br><br>
+                        <button type="submit" value="Submit" class="btn center-align btn-large waves-effect waves-light deep-purple">
+                            <i class="material-icons">move_to_inbox</i> Submit
+                        </button>
+                       
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>  
+            
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>

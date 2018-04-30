@@ -1,7 +1,7 @@
 const path = require('path');
 
 
-const friends = require('../data/friends.json');
+const friends = require('../data/friends.js');
 
 
 module.exports = (app) => {
