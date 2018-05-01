@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <link href="./css/style.css">
@@ -30,13 +34,13 @@
                                     <div class="row">
                                     <div class="input-field col s6 deep-purple-text">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input name="name" id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Name</label>
+                                        <input name="userName" id="userName" type="text" class="validate">
+                                        <label for="userName">Name</label>
                                     </div>
                                     <div class="input-field col s6 deep-purple-text">
                                         <i class="material-icons prefix">camera_front</i>
-                                        <input name="photoLink" id="icon_telephone" type="text" class="validate">
-                                        <label for="icon_telephone">Link to Photo of You</label>
+                                        <input name="photoLink" id="photoLink" type="text" class="validate">
+                                        <label for="photoLink">Link to Photo of You</label>
                                     </div>
                                 </div>
                             </div>
@@ -176,9 +180,9 @@
                                     
                         
                                 <br>
-                                <button for="userForm" type="submit" value="Submit" class="btn center-align btn-large waves-effect waves-light deep-purple">
-                                    <i class="material-icons">move_to_inbox</i> Submit
+                                <button for="userForm" data-target="matchModal" type="submit" value="Submit" class="btn center-align btn-large waves-effect waves-light deep-purple modal-trigger" id="subBtn"> Submit
                                 </button>
+
                             </form>
                         </div>
                     </div>
@@ -199,8 +203,67 @@
                 </div>
             </div>
         </footer>
-
+    
     </div>  
+
+    
+
+    <!-- Modal to Display Closest Friend Match -->\
+    <div id="matchModal" class="modal">
+        <div class="modal-content center-align">
+            <h5>Match Found!</h5>
+            <div class="divider"></div>
+			<h5 id="matchName"></h5>
+			<img id="matchImg" class="materialboxed" width="650" src="">
+        </div>
+        <div class="modal-footer center-align">
+            <button  href="/survey.html" class="btn center-align btn-large waves-effect waves-light deep-purple" onClick="window.location.reload();" id="modBtn"> Redo Survey
+            </button>
+        </div>
+    </div>
+
+    <script>
+        $('select').material_select();
+        $('#matchModal').modal({
+				dismissible: false, // Modal can be dismissed by clicking outside of the modal
+				opacity: .5, // Opacity of modal background
+				inDuration: 300, // Transition in duration
+				outDuration: 200, // Transition out duration
+				startingTop: '4%', // Starting top style attribute
+				endingTop: '10%' // Ending top style attribute
+        });
+        
+        $("#subBtn").on('click', (event) => {
+            event.preventDefault();
+
+            let userInput = {
+                name: $('#userName').val().trim(),
+                photo: $('#photoLink').val().trim(),
+                scores: [
+                    $('#que1').val().trim(),
+					$('#que2').val().trim(),
+					$('#que3').val().trim(),
+					$('#que4').val().trim(),
+					$('#que5').val().trim(),
+					$('#que6').val().trim(),
+					$('#que7').val().trim(),
+					$('#que8').val().trim(),
+					$('#que9').val().trim(),
+					$('#que10').val().trim()
+                ]
+            };
+            
+            $.post('/api/friends', userInput).done((data) => {
+      			// console.log('response = ' + JSON.stringify(data));
+      			// Set the name and image values of friend match
+      			$('#matchName').html(data.matchName);
+		    	$("#matchImg").attr("src", data.matchImage);
+		    	// Pop open the modal dialog
+                  $('#matchModal').modal('open');
+            });
+
+        });
+    </script>
 
     <style>
         input[type=range]::-webkit-slider-thumb {
@@ -233,5 +296,7 @@
             
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    
+
 </body>
 </html>
